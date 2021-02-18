@@ -1,5 +1,6 @@
 import { Component ,OnInit} from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { ShipmentHistory} from './interface/shipment-history';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,15 @@ import { HttpClient } from "@angular/common/http";
 })
 export class AppComponent implements OnInit{
   title = 'bennu';
-  shipmentHistory: any = [];
+  shipmentHistories: ShipmentHistory[] = [];
   constructor(private httpClient: HttpClient){}
   ngOnInit(){
-    this.httpClient.get("assets/json/data.json").subscribe(data =>{
-      this.shipmentHistory = data;
-      console.log("ship",this.shipmentHistory)
+    this.httpClient.get("assets/json/data.json").subscribe((data : any) =>{
+      this.shipmentHistories = data.shipmentHistory;
+      console.log(this.shipmentHistories);
+      // const test = data.shipmentHistory;
+      // console.log("ship",this.shipmentHistory)
+      // console.log(test);
     })
   }
 }
