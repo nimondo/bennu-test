@@ -23,9 +23,13 @@
       <div class="col-md-8">
           <div class="main-card mb-3 card">
               <div class="card-body">
-                  <h5 class="card-title style-c justify-content-center">Shipment History</h5>
+                <div class="text-center col-12">
+                  <h3 class="mx-auto style-c">Shipment History</h3>
+                </div>
 
-                  <div class="vertical-timeline vertical-timeline--animate vertical-timeline--one-column" *ngFor="let history of shipmentHistories; first as isFirst; last as isLast">
+                  <div [ngClass]="{'vertical-timeline--animate vertical-timeline--one-column': true,
+                  'vertical-timeline-delivered': history.shipmentIsDelayed ,
+                  'vertical-timeline ': !history.shipmentIsDelayed }" *ngFor="let history of shipmentHistories; first as isFirst; last as isLast">
                       <div class="vertical-timeline-item vertical-timeline-element">
                           <div> <span class="vertical-timeline-element-icon bounce-in"><span [ngClass]="{'badge': true,
                             'badge-warning style-e': history.shipmentIsDelayed ,

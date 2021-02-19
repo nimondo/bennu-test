@@ -1,5 +1,14 @@
-# Bennu
+# Bennu Test
+Travail à faire
+Ne montrer la date qui se repete q'une seule fois dans la serie.
+Quand ShipmentIsDelayed = true, changer la couleur de la ligne
+La ville et le sigle de l'etat sont sous le commentaire du status en mode mobile view et en mode desktop
+Quand le status est "delivered" montrer l'icone check
+Quand le status est "arrived" montrer l'icone pointer 
 
+Nous avons utilisé angular pour ce faire
+
+## Bennu 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
 
 ## Development server
