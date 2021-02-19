@@ -18,7 +18,6 @@ export class AppComponent implements OnInit{
       for (const element of history) {
         let dat = `${element.eventDateTime}`;
         let date1 = dat?.substring(0, 10);
-        console.log(date1 == tps, date1, tps)
         if(date1 == tps){
           element.displayMonth = false;
           tps = date1;

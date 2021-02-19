@@ -64,7 +64,7 @@
     font-size: 14px;
     padding: 25px 3px;
     font-weight: 600;
-    font-family: "Open Sans", sans-serif;
+    font-family: Montserrat;
   }
   
   .nav-menu > ul > li > a:before {
@@ -354,7 +354,7 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 67px;
+    left: 150px;
     height: 100%;
     width: 4px;
     background: #e9ecef;
@@ -374,7 +374,7 @@
 .vertical-timeline-element-icon {
     position: absolute;
     top: 0;
-    left: 60px
+    left: 142px
 }
 
 .vertical-timeline-element-icon .badge-dot-xl {
@@ -405,22 +405,22 @@
 
 .vertical-timeline-element-content {
     position: relative;
-    margin-left: 90px;
-    font-size: .8rem
+    margin-left: 180px;
+    // font-size: .8rem
 }
 
 .vertical-timeline-element-content .timeline-title {
-    font-size: .8rem;
+    // font-size: .8rem;
     text-transform: capitalize;
     margin: 0 0 .5rem;
     padding: 2px 0 0;
-    font-weight: bold
+    // font-weight: bold
 }
 
 .vertical-timeline-element-content .vertical-timeline-element-date {
     display: block;
     position: absolute;
-    left: -120px;
+    left: -180px;
     top: 0;
     padding-right: 10px;
     text-align: right;
@@ -449,9 +449,24 @@
       position: absolute;
       text-transform: capitalize;
   }
+  .state{
+    left:200px;
+    position: absolute;
+    text-transform: capitalize;
+  }
+  .date-month{
+    left:-15px;
+    position: absolute;
+    text-transform: capitalize;
+  }
+  .date-hour{
+    left:80px;
+    position: absolute;
+    text-transform: capitalize;
+  }
 .style-a{
   color: #888e96;
-  font-size: 14px;
+  font-size: 14px !important;
   font-family: Montserrat;
 }
 .style-b{

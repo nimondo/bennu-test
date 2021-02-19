@@ -23,14 +23,21 @@
       <div class="col-md-8">
           <div class="main-card mb-3 card">
               <div class="card-body">
-                  <h5 class="card-title">Shipment History</h5>
+                  <h5 class="card-title style-c justify-content-center">Shipment History</h5>
 
-                  <div class="vertical-timeline vertical-timeline--animate vertical-timeline--one-column" *ngFor="let history of shipmentHistories;">
+                  <div class="vertical-timeline vertical-timeline--animate vertical-timeline--one-column" *ngFor="let history of shipmentHistories; first as isFirst; last as isLast">
                       <div class="vertical-timeline-item vertical-timeline-element">
-                          <div> <span class="vertical-timeline-element-icon bounce-in"><span class="badge badge-secondary"><i class="fa fa-user text-white"> </i></span></span>
+                          <div> <span class="vertical-timeline-element-icon bounce-in"><span [ngClass]="{'badge': true,
+                            'badge-warning style-e': history.shipmentIsDelayed ,
+                            'badge-primary style-f': !history.shipmentIsDelayed }"><i [ngClass]="{'text-white fa ': true,
+                            'fa-circle ':(!isFirst && !isLast),
+                            'fa-map-marker': isLast,
+                            'fa-check-circle': isFirst}"> 
+
+                            </i></span></span>
                               <div class="vertical-timeline-element-content bounce-in">
-                                <span><h4 class="timeline-title">{{history.eventPosition?.status | lowercase}}<span class="state">{{history.eventPosition?.city |lowercase}}, {{history.eventPosition?.state}}</span></h4> </span>
-                                  <p>{{history.eventPosition?.comments == 'null'? '' : history.eventPosition?.comments}}</p> <span class="vertical-timeline-element-date"><span *ngIf="history.displayMonth">{{history.eventDateTime | date: 'MMMM'}} {{history.eventDateTime | date: 'd'}}{{history.order}}</span>&nbsp; &nbsp;<span>{{history.eventDateTime | date: 'shortTime'}} </span></span>
+                                <span><p class="timeline-title"><span class=" style-b">{{history.eventPosition?.status | lowercase}}</span><span class="state style-a" style="font-size: 14px !important;">{{history.eventPosition?.city |lowercase}}, {{history.eventPosition?.state}}</span></p> </span>
+                                  <p class="style-a">{{history.eventPosition?.comments == 'null'? '' : history.eventPosition?.comments}}</p> <span class="vertical-timeline-element-date"><span class="date-month style-d" *ngIf="history.displayMonth">{{history.eventDateTime | date: 'MMMM'}} {{history.eventDateTime | date: 'd'}}{{history.order}}</span>&nbsp; &nbsp;<span class="date-hour style-a">{{history.eventDateTime | date: 'shortTime' | lowercase}} </span></span>
                               </div>
                           </div>
                       </div>
