@@ -20,17 +20,17 @@
 </header><!-- End Header -->
 <main id="main row">
     <div class="d-flex justify-content-center mt-70 mb-70">
-      <div class="col-md-6">
+      <div class="col-md-8">
           <div class="main-card mb-3 card">
               <div class="card-body">
-                  <h5 class="card-title">Shipment History Timeline</h5>
+                  <h5 class="card-title">Shipment History</h5>
 
-                  <div class="vertical-timeline vertical-timeline--animate vertical-timeline--one-column" *ngFor="let history of shipmentHistories ">
+                  <div class="vertical-timeline vertical-timeline--animate vertical-timeline--one-column" *ngFor="let history of shipmentHistories;">
                       <div class="vertical-timeline-item vertical-timeline-element">
                           <div> <span class="vertical-timeline-element-icon bounce-in"><span class="badge badge-secondary"><i class="fa fa-user text-white"> </i></span></span>
                               <div class="vertical-timeline-element-content bounce-in">
-                                  <h4 class="timeline-title">Meeting with client</h4>
-                                  <p>Meeting with USA Client, today at <a href="javascript:void(0);" data-abc="true">12:00 PM</a></p> <span class="vertical-timeline-element-date">9:30 AM</span>
+                                <span><h4 class="timeline-title">{{history.eventPosition?.status | lowercase}}<span class="state">{{history.eventPosition?.city |lowercase}}, {{history.eventPosition?.state}}</span></h4> </span>
+                                  <p>{{history.eventPosition?.comments == 'null'? '' : history.eventPosition?.comments}}</p> <span class="vertical-timeline-element-date"><span *ngIf="history.displayMonth">{{history.eventDateTime | date: 'MMMM'}} {{history.eventDateTime | date: 'd'}}{{history.order}}</span>&nbsp; &nbsp;<span>{{history.eventDateTime | date: 'shortTime'}} </span></span>
                               </div>
                           </div>
                       </div>

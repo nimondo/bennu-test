@@ -2,7 +2,9 @@ import {EventPosition} from "./event-position";
 
 
 export interface ShipmentHistory {
-    eventDatetime?: Date;
+    eventDateTime?: Date;
     eventPosition?: EventPosition;
     shipmentIsDelayed?: boolean;
+    displayMonth?: boolean;
+    order?: string;
 }

@@ -411,7 +411,7 @@
 
 .vertical-timeline-element-content .timeline-title {
     font-size: .8rem;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin: 0 0 .5rem;
     padding: 2px 0 0;
     font-weight: bold
@@ -420,7 +420,7 @@
 .vertical-timeline-element-content .vertical-timeline-element-date {
     display: block;
     position: absolute;
-    left: -90px;
+    left: -120px;
     top: 0;
     padding-right: 10px;
     text-align: right;
@@ -443,4 +443,9 @@
     .mt-70 {
       margin-top: 35%;
     }
+  }
+  .state{
+      left:200px;
+      position: absolute;
+      text-transform: capitalize;
   }
