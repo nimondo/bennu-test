@@ -461,14 +461,18 @@
     }
   }
   .state{
-      left:200px;
-      position: absolute;
-      text-transform: capitalize;
-  }
-  .state{
     left:200px;
     position: absolute;
     text-transform: capitalize;
+  }
+  @media (max-width: 500px) {
+    .state{
+      left:0px;
+      position: absolute;
+      display: block;
+      margin-top: -8px !important;
+      text-transform: capitalize;
+    }
   }
   .date-month{
     left:-15px;
